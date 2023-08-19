@@ -7,6 +7,9 @@ import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
 
+/**
+ * Junit tests to verify and validate the generated pins
+ */
 public class RandomPinGeneratorImplTest {
     private final RandomPinGeneratorImpl randomPinGeneratorImpl = new RandomPinGeneratorImpl();
 

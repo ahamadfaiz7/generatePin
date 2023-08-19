@@ -10,6 +10,7 @@ class RandomPinGeneratorImpl implements PinGenerator {
 
     public static final int DIGITS_OF_PIN = 1000;
     public static final int BOUND = 2;
+    public static final int MIN_START_DIGIT = 1;
     static Logger log = Logger.getLogger(RandomPinGeneratorImpl.class.getName());
 
 
@@ -23,7 +24,7 @@ class RandomPinGeneratorImpl implements PinGenerator {
         try {
             log.info("generating " + numberOfRandomPins + " pins");
             while (generatedUniquePins.size() < numberOfRandomPins) {
-                generatedUniquePins.add((1 + random.nextInt(BOUND)) * DIGITS_OF_PIN + random.nextInt(DIGITS_OF_PIN));
+                generatedUniquePins.add((MIN_START_DIGIT + random.nextInt(BOUND)) * DIGITS_OF_PIN + random.nextInt(DIGITS_OF_PIN));
             }
             log.info("generated " + generatedUniquePins.size() + " pins");
         } catch (Exception e) {
